@@ -23,12 +23,13 @@ const MONGODB_URI = process.env.MONGODB_URI;
 mongoose
   .connect(MONGODB_URI)
   .then(() => {
-    console.log("Connected to MongoDB");
+    console.log("✅ Connected to MongoDB Atlas");
     app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`🚀 Server running on http://localhost:${PORT}`);
     });
   })
   .catch((err) => {
-    console.error("Mongo connection error", err);
+    console.error("❌ MongoDB connection error:", err.message);
+    console.error("💡 Check: Atlas network access, credentials, cluster name");
     process.exit(1);
   });
