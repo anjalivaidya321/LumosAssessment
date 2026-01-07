@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 // mount posts router
 app.use("/api/posts", postsRouter);
 
+
 const PORT = process.env.PORT || 4000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
